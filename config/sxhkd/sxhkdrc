@@ -3,6 +3,7 @@ super + s
     sh $HOME/.local/bin/region_screenshot_clipboard
 
 # Region Screenshot File
+super + shift + s
     sh $HOME/.local/bin/region_screenshot_file
 
 
