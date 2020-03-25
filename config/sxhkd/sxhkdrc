@@ -15,7 +15,7 @@ super + plus
     pamixer --set-volume 50 && sh $HOME/.local/bin/dwm_refresh_statusbar
 
 # Volume Mute Toggle
-super + _
+super + underscore
     sh $HOME/.local/bin/volume_mute_toggle && sh $HOME/.local/bin/dwm_refresh_statusbar
 
 
