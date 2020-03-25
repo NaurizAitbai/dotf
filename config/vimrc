@@ -1,0 +1,28 @@
+" Disable backups
+set nobackup
+set nowritebackup
+
+
+" Disable autoindent
+set nocindent
+set nosmartindent
+
+
+" Filetype Indent
+filetype plugin indent on
+
+" show existing tab with 4 spaces width
+set tabstop=4
+
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+
+" on pressing tab, insert 4 spaces
+set expandtab
+
+set nocompatible
+filetype on
+
+
+" Bind Keys
+autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>

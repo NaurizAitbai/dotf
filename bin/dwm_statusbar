@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Statusbar loop
+while true; do
+    # Datetime
+    str_datetime=$(date +"%F %R")
+    str_volume=$(pamixer --get-volume-human)
+    str_lang=$(setxkbmap -query | grep layout | awk '{print $2}' | tr a-z A-Z)
+
+    xsetroot -name "LANG: $str_lang | VOL: $str_volume | $str_datetime"
+    sleep 1m
+done &

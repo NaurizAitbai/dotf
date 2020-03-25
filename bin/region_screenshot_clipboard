@@ -1,0 +1,9 @@
+#!/bin/sh
+
+FILE=/tmp/screenshot.png
+
+[ -f "$FILE" ] && rm $FILE
+
+maim -s $FILE
+
+[ -f "$FILE" ] && { xclip -selection clipboard -t image/png -i $FILE; notify-send -i $FILE "Screenshot" "Screenshot copied to clipboard"; rm $FILE; }

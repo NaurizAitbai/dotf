@@ -1,0 +1,38 @@
+# Region Screenshot Clipboard
+super + s
+    sh $HOME/.local/bin/region_screenshot_clipboard
+
+# Region Screenshot File
+    sh $HOME/.local/bin/region_screenshot_file
+
+
+# Change Volume
+super + {minus,equal}
+    pamixer -{d,i} 5 && sh $HOME/.local/bin/dwm_refresh_statusbar
+
+# Change Volume to 50%
+super + plus
+    pamixer --set-volume 50 && sh $HOME/.local/bin/dwm_refresh_statusbar
+
+# Volume Mute Toggle
+super + _
+    sh $HOME/.local/bin/volume_mute_toggle && sh $HOME/.local/bin/dwm_refresh_statusbar
+
+
+# Change Lang (EN,RU)
+super + z
+    sh $HOME/.local/bin/change_lang_us-ru && $HOME/.local/bin/dwm_refresh_statusbar
+
+# Change Lang (EN,KZ)
+super + shift + z
+    sh $HOME/.local/bin/change_lang_us-kz && $HOME/.local/bin/dwm_refresh_statusbar
+
+
+# Lockscreen
+super + shift + l
+    setxkbmap -layout us && pamixer --mute && { i3lock -n -t -i $HOME/.lock.png; pamixer --unmute; sh $HOME/.local/bin/dwm_refresh_statusbar; }
+
+
+# Start ranger
+super + r
+    st -e ranger
