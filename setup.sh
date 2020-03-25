@@ -45,6 +45,8 @@ ln -sf $(realpath config/sxhkd/*) $HOME/.config/sxhkd/
 
 ln -sf $(realpath bin/*) $HOME/.local/bin
 
+# execution permissions for binaries
+chmod +x bin/*
 
 # link config files
 ln -sf $(realpath config/bashrc) $HOME/.bashrc
