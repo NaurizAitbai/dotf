@@ -1,23 +1,26 @@
 #!/bin/sh
 
+# xclip
+expac "%n" -Q xclip >/dev/null || sudo pacman -S --noconfirm xclip
+
 # network-manager-applet
-expac "%n" -S network-manager-applet >/dev/null || sudo pacman -S --noconfirm network-manager-applet
+expac "%n" -Q network-manager-applet >/dev/null || sudo pacman -S --noconfirm network-manager-applet
 
 # pamixer
-expac "%n" -S pamixer >/dev/null || sudo pacman -S --noconfirm pamixer
+expac "%n" -Q pamixer >/dev/null || sudo pacman -S --noconfirm pamixer
 
 # setxkbmap
-expac "%n" -S xorg-setxkbmap >/dev/null || sudo pacman -S --noconfirm xorg-setxkbmap
+expac "%n" -Q xorg-setxkbmap >/dev/null || sudo pacman -S --noconfirm xorg-setxkbmap
 
 # xsetroot
-expac "%n" -S xorg-xsetroot >/dev/null || sudo pacman -S --noconfirm xorg-xsetroot
+expac "%n" -Q xorg-xsetroot >/dev/null || sudo pacman -S --noconfirm xorg-xsetroot
 
 # i3lock
-expac "%n" -S i3lock >/dev/null || sudo pacman -S --noconfirm i3lock
+expac "%n" -Q i3lock >/dev/null || sudo pacman -S --noconfirm i3lock
 
 
 # ranger
-expac "%n" -S ranger >/dev/null || sudo pacman -S --noconfirm ranger
+expac "%n" -Q ranger >/dev/null || sudo pacman -S --noconfirm ranger
 
 [ -d $HOME/.config/ranger ] || mkdir -p $HOME/.config/ranger
 
@@ -25,7 +28,7 @@ ln -sf $(realpath config/ranger/*) $HOME/.config/ranger/
 
 
 # dunst
-expac "%n" -S dunst >/dev/null || sudo pacman -S --noconfirm dunst
+expac "%n" -Q dunst >/dev/null || sudo pacman -S --noconfirm dunst
 
 [ -d $HOME/.config/dunst ] || mkdir -p $HOME/.config/dunst
 
@@ -33,7 +36,7 @@ ln -sf $(realpath config/dunst/*) $HOME/.config/dunst/
 
 
 # sxhkd
-expac "%n" -S sxhkd >/dev/null || sudo pacman -S --noconfirm sxhkd
+expac "%n" -Q sxhkd >/dev/null || sudo pacman -S --noconfirm sxhkd
 
 [ -d $HOME/.config/sxhkd ] || mkdir -p $HOME/.config/sxhkd
 
