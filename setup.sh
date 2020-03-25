@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # network-manager-applet
-expac "%n" -S network-manager-applet || sudo pacman -S --noconfirm network-manager-applet
+expac "%n" -S network-manager-applet >/dev/null || sudo pacman -S --noconfirm network-manager-applet
 
 # pamixer
 expac "%n" -S pamixer >/dev/null || sudo pacman -S --noconfirm pamixer
