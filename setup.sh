@@ -27,6 +27,14 @@ expac "%n" -Q ranger >/dev/null || sudo pacman -S --noconfirm ranger
 ln -sf $(realpath config/ranger/*) $HOME/.config/ranger/
 
 
+# qutebrowser
+expac "%n" -Q qutebrowser >/dev/null || sudo pacman -S --noconfirm qutebrowser
+
+[ -d $HOME/.config/qutebrowser ] || mkdir -p $HOME/.config/qutebrowser
+
+ln -sf $(realpath config/qutebrowser/*) $HOME/.config/qutebrowser/
+
+
 # dunst
 expac "%n" -Q dunst >/dev/null || sudo pacman -S --noconfirm dunst
 
