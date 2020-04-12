@@ -19,6 +19,14 @@ expac "%n" -Q xorg-xsetroot >/dev/null || sudo pacman -S --noconfirm xorg-xsetro
 expac "%n" -Q i3lock >/dev/null || sudo pacman -S --noconfirm i3lock
 
 
+# transmission
+expac "%n" -Q transmission-cli >/dev/null || sudo pacman -S --noconfirm transmission-cli
+
+[ -d $HOME/.config/transmission-daemon ] || mkdir -p $HOME/.config/transmission-daemon
+
+ln -sf $(realpath config/transmission-daemon/*) $HOME/.config/transmission-daemon/
+
+
 # ranger
 expac "%n" -Q ranger >/dev/null || sudo pacman -S --noconfirm ranger
 
@@ -51,6 +59,12 @@ expac "%n" -Q sxhkd >/dev/null || sudo pacman -S --noconfirm sxhkd
 ln -sf $(realpath config/sxhkd/*) $HOME/.config/sxhkd/
 
 
+# applications (desktop-files)
+[ -d $HOME/.local/share/applications ] || mkdir -p $HOME/.local/share/applications
+
+ln -sf $(realpath applications/*) $HOME/.local/share/applications
+
+
 # binaries
 [ -d $HOME/.local/bin ] || mkdir -p $HOME/.local/bin
 
@@ -65,5 +79,6 @@ ln -sf $(realpath config/vimrc) $HOME/.vimrc
 ln -sf $(realpath config/xinitrc) $HOME/.xinitrc
 
 
-# link user-dirs
+# link inside .config
 ln -sf $(realpath config/user-dirs.dirs) $HOME/.config/user-dirs.dirs
+ln -sf $(realpath config/mimeapps.list) $HOME/.config/mimeapps.list

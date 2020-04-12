@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Ranger
+Terminal=false
+Exec=st -e ranger %u

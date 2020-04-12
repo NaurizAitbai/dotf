@@ -2,11 +2,18 @@
 
 # Statusbar loop
 while true; do
+    # Torrent
+    str_tors=$(transmission-remote -l | grep % | sed "s/.*100%.*/C/g; s/.*%.*/A/g" | sort -h | uniq -c | sed "s/A/TORS:/g; s/C/DONE:/g" | awk '{print $2, $1}' | tr '\n' ' ' | sed "s/ $//")
+
     # Datetime
     str_datetime=$(date +"%F %R")
+
+    # Volume
     str_volume=$(pamixer --get-volume-human)
+
+    # Lang
     str_lang=$(setxkbmap -query | grep layout | awk '{print $2}' | tr a-z A-Z)
 
-    xsetroot -name "LANG: $str_lang | VOL: $str_volume | $str_datetime"
+    xsetroot -name "$str_tors | LANG: $str_lang | VOL: $str_volume | $str_datetime"
     sleep 1m
 done &

@@ -19,6 +19,9 @@ dunst &
 # Start nm-applet
 nm-applet &
 
+# Start transmission
+transmission-daemon &
+
 # Show background wallpaper
 feh --bg-fill $HOME/.wallpaper.png
 
