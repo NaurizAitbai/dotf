@@ -33,6 +33,9 @@ super + shift + z
 super + shift + l
     setxkbmap -layout us && pamixer --mute && { i3lock -n -t -i $HOME/.lock.png; pamixer --unmute; sh $HOME/.local/bin/dwm_refresh_statusbar; }
 
+# Dmenu: Emoji
+super + e
+    sh $HOME/.local/bin/dmenuunicode
 
 # Start ranger
 super + r

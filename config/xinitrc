@@ -25,6 +25,13 @@ transmission-daemon &
 # Show background wallpaper
 feh --bg-fill $HOME/.wallpaper.png
 
+# Fix Java Blank Screen
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# For Android SDK
+export ANDROID_HOME=$HOME/apps/android/sdk/
+export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator"
+
 # Loop dwm
 while true; do
     dwm 1>/dev/null 2>&1

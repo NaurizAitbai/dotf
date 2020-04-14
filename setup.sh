@@ -65,6 +65,12 @@ ln -sf $(realpath config/sxhkd/*) $HOME/.config/sxhkd/
 ln -sf $(realpath applications/*) $HOME/.local/share/applications
 
 
+# share
+[ -d $HOME/.local/share ] || mkdir -p $HOME/.local/share
+
+ln -sf $(realpath share/*) $HOME/.local/share
+
+
 # binaries
 [ -d $HOME/.local/bin ] || mkdir -p $HOME/.local/bin
 
