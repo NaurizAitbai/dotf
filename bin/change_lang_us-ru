@@ -1,10 +1,10 @@
 #!/bin/sh
 
-LANG="$(setxkbmap -query | grep layout | awk '{print $2}')"
+LANG="$(xkb-switch)"
 
 if [ "$LANG" = "us" ]
 then
-    setxkbmap -layout ru
+    xkb-switch -s ru
 else
-    setxkbmap -layout us
+    xkb-switch -s us
 fi

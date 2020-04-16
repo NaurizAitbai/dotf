@@ -12,7 +12,8 @@ while true; do
     str_volume=$(pamixer --get-volume-human)
 
     # Lang
-    str_lang=$(setxkbmap -query | grep layout | awk '{print $2}' | tr a-z A-Z)
+    #str_lang=$(setxkbmap -query | grep layout | awk '{print $2}' | tr a-z A-Z)
+    str_lang=$(xkb-switch | tr a-z A-Z)
 
     xsetroot -name "$str_tors | LANG: $str_lang | VOL: $str_volume | $str_datetime"
     sleep 1m

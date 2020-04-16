@@ -28,14 +28,15 @@ super + z
 super + shift + z
     sh $HOME/.local/bin/change_lang_us-kz && $HOME/.local/bin/dwm_refresh_statusbar
 
-
 # Lockscreen
 super + shift + l
-    setxkbmap -layout us && pamixer --mute && { i3lock -n -t -i $HOME/.lock.png; pamixer --unmute; sh $HOME/.local/bin/dwm_refresh_statusbar; }
+    sh $HOME/.local/bin/change_lang_us && pamixer --mute && { i3lock -n -t -i $HOME/.lock.png; pamixer --unmute; sh $HOME/.local/bin/dwm_refresh_statusbar; }
+
 
 # Dmenu: Emoji
 super + e
     sh $HOME/.local/bin/dmenuunicode
+
 
 # Start ranger
 super + r
