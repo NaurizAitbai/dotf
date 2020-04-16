@@ -19,6 +19,14 @@ expac "%n" -Q xorg-xsetroot >/dev/null || sudo pacman -S --noconfirm xorg-xsetro
 expac "%n" -Q i3lock >/dev/null || sudo pacman -S --noconfirm i3lock
 
 
+# mpd
+expac "%n" -Q mpd >/dev/null || sudo pacman -S --noconfirm mpd
+
+[ -d $HOME/.config/mpd ] || mkdir -p $HOME/.config/mpd
+
+ln -sf $(realpath config/mpd/*) $HOME/.config/mpd/
+
+
 # transmission
 expac "%n" -Q transmission-cli >/dev/null || sudo pacman -S --noconfirm transmission-cli
 

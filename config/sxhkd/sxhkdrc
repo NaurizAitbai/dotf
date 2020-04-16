@@ -19,6 +19,10 @@ super + plus
 super + underscore
     sh $HOME/.local/bin/volume_mute_toggle && sh $HOME/.local/bin/dwm_refresh_statusbar
 
+# Music Toggle
+super + shift + p
+    mpc toggle
+
 
 # Change Lang (EN,RU)
 super + z
