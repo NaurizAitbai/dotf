@@ -11,9 +11,13 @@ config.set(
         {'scrollable': ['#container']},
         pattern='*://*.youtube.com/*',
         )
-
 config.set(
         'hints.selectors',
         {'all': [*c.hints.selectors['all'], '.tn-data-list']},
         pattern='*://*.tengrinews.kz/*',
         )
+
+# 2ch.hk
+with config.pattern('*://*.2ch.hk/*') as p:
+    p.hints.selectors['all'] = [*p.hints.selectors['all'], '#plashque-close', '.spoiler', '.expand-large-comment']
+    p.hints.selectors['scrollable'] = ['.cntnt__left_sticky']
