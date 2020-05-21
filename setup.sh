@@ -34,12 +34,18 @@ expac "%n" -Q transmission-cli >/dev/null || sudo pacman -S --noconfirm transmis
 
 ln -sf $(realpath config/transmission-daemon/*) $HOME/.config/transmission-daemon/
 
+
 # feh
 expac "%n" -Q feh >/dev/null || sudo pacman -S --noconfirm feh
 
 # w3m
 expac "%n" -Q w3m >/dev/null || sudo pacman -S --noconfirm w3m
 
+# poppler
+expac "%n" -Q poppler >/dev/null || sudo pacman -S --noconfirm poppler
+
+# ffmpegthumbnailer
+expac "%n" -Q ffmpegthumbnailer >/dev/null || sudo pacman -S --noconfirm ffmpegthumbnailer
 
 # ranger
 expac "%n" -Q ranger >/dev/null || sudo pacman -S --noconfirm ranger
