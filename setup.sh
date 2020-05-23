@@ -19,6 +19,17 @@ expac "%n" -Q xorg-xsetroot >/dev/null || sudo pacman -S --noconfirm xorg-xsetro
 expac "%n" -Q i3lock >/dev/null || sudo pacman -S --noconfirm i3lock
 
 
+# noto-fonts
+expac "%n" -Q noto-fonts-cjk >/dev/null || sudo pacman -S --noconfirm noto-fonts-cjk
+expac "%n" -Q noto-fonts-emoji >/dev/null || sudo pacman -S --noconfirm noto-fonts-emoji
+expac "%n" -Q noto-fonts-extra >/dev/null || sudo pacman -S --noconfirm noto-fonts-extra
+
+
+# mpv
+expac "%n" -Q mpv >/dev/null || sudo pacman -S --noconfirm mpv
+expac "%n" -Q youtube-dl >/dev/null || sudo pacman -S --noconfirm youtube-dl
+
+
 # mpd
 expac "%n" -Q mpd >/dev/null || sudo pacman -S --noconfirm mpd
 
@@ -77,6 +88,14 @@ expac "%n" -Q sxhkd >/dev/null || sudo pacman -S --noconfirm sxhkd
 [ -d $HOME/.config/sxhkd ] || mkdir -p $HOME/.config/sxhkd
 
 ln -sf $(realpath config/sxhkd/*) $HOME/.config/sxhkd/
+
+
+# zathura
+expac "%n" -Q zathura >/dev/null || sudo pacman -S --noconfirm zathura zathura-djvu zathura-pdf-mupdf
+
+[ -d $HOME/.config/zathura ] || mkdir -p $HOME/.ocnfig/zathura
+
+ln -sf $(realpath config/zathura/*) $HOME/.config/zathura/
 
 
 # applications (desktop-files)
