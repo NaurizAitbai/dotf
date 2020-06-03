@@ -6,6 +6,10 @@ c.content.pdfjs = True
 c.session.lazy_restore = True
 c.tabs.background = True
 
+# Change font to Iosevka
+c.fonts.default_family = 'iosevka'
+c.fonts.web.family.standard = 'iosevka'
+
 config.set(
         'hints.selectors',
         {'scrollable': ['#container']},
