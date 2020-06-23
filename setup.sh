@@ -24,6 +24,10 @@ expac "%n" -Q noto-fonts-cjk >/dev/null || sudo pacman -S --noconfirm noto-fonts
 expac "%n" -Q noto-fonts-emoji >/dev/null || sudo pacman -S --noconfirm noto-fonts-emoji
 expac "%n" -Q noto-fonts-extra >/dev/null || sudo pacman -S --noconfirm noto-fonts-extra
 
+# font-config
+[ -d $HOME/.config/fontconfig ] || mkdir -p $HOME/.config/fontconfig
+
+ln -sf $(realpath config/fontconfig/*) $HOME/.config/fontconfig/
 
 # mpv
 expac "%n" -Q mpv >/dev/null || sudo pacman -S --noconfirm mpv
