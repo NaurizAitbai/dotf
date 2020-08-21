@@ -21,7 +21,7 @@ super + underscore
 
 # Music Toggle
 super + shift + p
-    mpc toggle
+    cmus-remote -u
 
 
 # Change Lang (EN,RU)

@@ -18,6 +18,8 @@ expac "%n" -Q xorg-xsetroot >/dev/null || sudo pacman -S --noconfirm xorg-xsetro
 # i3lock
 expac "%n" -Q i3lock >/dev/null || sudo pacman -S --noconfirm i3lock
 
+# cmus
+expac "%n" -Q cmus >/dev/null || sudo pacman -S --noconfirm cmus
 
 # noto-fonts
 expac "%n" -Q noto-fonts-cjk >/dev/null || sudo pacman -S --noconfirm noto-fonts-cjk
