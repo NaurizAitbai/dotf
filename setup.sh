@@ -21,6 +21,9 @@ expac "%n" -Q i3lock >/dev/null || sudo pacman -S --noconfirm i3lock
 # cmus
 expac "%n" -Q cmus >/dev/null || sudo pacman -S --noconfirm cmus
 
+# imagemagick
+expac "%n" -Q imagemagick >/dev/null || sudo pacman -S --noconfirm imagemagick
+
 # noto-fonts
 expac "%n" -Q noto-fonts-cjk >/dev/null || sudo pacman -S --noconfirm noto-fonts-cjk
 expac "%n" -Q noto-fonts-emoji >/dev/null || sudo pacman -S --noconfirm noto-fonts-emoji
@@ -99,7 +102,7 @@ ln -sf $(realpath config/sxhkd/*) $HOME/.config/sxhkd/
 # zathura
 expac "%n" -Q zathura >/dev/null || sudo pacman -S --noconfirm zathura zathura-djvu zathura-pdf-mupdf
 
-[ -d $HOME/.config/zathura ] || mkdir -p $HOME/.ocnfig/zathura
+[ -d $HOME/.config/zathura ] || mkdir -p $HOME/.config/zathura
 
 ln -sf $(realpath config/zathura/*) $HOME/.config/zathura/
 
