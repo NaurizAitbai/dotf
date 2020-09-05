@@ -12,6 +12,10 @@ expac "%n" -Q pamixer >/dev/null || sudo pacman -S --noconfirm pamixer
 # setxkbmap
 expac "%n" -Q xorg-setxkbmap >/dev/null || sudo pacman -S --noconfirm xorg-setxkbmap
 
+# syncthing
+expac "%n" -Q syncthing >/dev/null || sudo pacman -S --noconfirm syncthing
+systemctl --user enable syncthing --now
+
 # xsetroot
 expac "%n" -Q xorg-xsetroot >/dev/null || sudo pacman -S --noconfirm xorg-xsetroot
 
