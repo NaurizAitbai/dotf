@@ -2,11 +2,34 @@
 
 current_location=$(pwd)
 
+# xorg-server
+pacman -Qi xorg-server >/dev/null 2>&1 || sudo pacman -S --noconfirm xorg-server
+
+# xorg-xinit
+pacman -Qi xorg-xinit >/dev/null 2>&1 || sudo pacman -S --noconfirm xorg-xinit
+
+# xorg-xrandr
+pacman -Qi xorg-xrandr >/dev/null 2>&1 || sudo pacman -S --noconfirm xorg-xrandr
+
+# xorg-xsetroot
+pacman -Qi xorg-xsetroot >/dev/null 2>&1 || sudo pacman -S --noconfirm xorg-xsetroot
+
+# nvidia
+pacman -Qi nvidia >/dev/null 2>&1 || sudo pacman -S --noconfirm nvidia
+sudo nvidia-xconfig
+
+# pulseaudio
+pacman -Qi pulseaudio >/dev/null 2>&1 || sudo pacman -S --noconfirm pulseaudio
+systemctl --user enable pulseaudio --now
+
 # xclip
 pacman -Qi xclip >/dev/null 2>&1 || sudo pacman -S --noconfirm xclip
 
 # network-manager
 pacman -Qi network-manager-applet >/dev/null 2>&1 || sudo pacman -S --noconfirm network-manager-applet
+
+# dmenu
+pacman -Qi dmenu >/dev/null 2>&1 || sudo pacman -S --noconfirm dmenu
 
 # pulsemixer
 pacman -Qi pulsemixer >/dev/null 2>&1 || sudo pacman -S --noconfirm pulsemixer
@@ -85,6 +108,9 @@ pacman -Qi sxiv >/dev/null 2>&1 || sudo pacman -S --noconfirm sxiv
 # keepassxc
 pacman -Qi keepassxc >/dev/null 2>&1 || sudo pacman -S --noconfirm keepassxc
 
+# libnotify
+pacman -Qi libnotify >/dev/null 2>&1 || sudo pacman -S --noconfirm libnotify
+
 # dunst
 pacman -Qi dunst >/dev/null 2>&1 || sudo pacman -S --noconfirm dunst
 [ -d $HOME/.config/dunst ] || mkdir -p $HOME/.config/dunst
@@ -94,6 +120,9 @@ ln -sf $(realpath config/dunst/dunstrc) $HOME/.config/dunst/
 pacman -Qi sxhkd >/dev/null 2>&1 || sudo pacman -S --noconfirm sxhkd
 [ -d $HOME/.config/sxhkd ] || mkdir -p $HOME/.config/sxhkd
 ln -sf $(realpath config/sxhkd/sxhkdrc) $HOME/.config/sxhkd/
+
+# maim
+pacman -Qi maim >/dev/null 2>&1 || sudo pacman -S --noconfirm maim
 
 # zathura
 pacman -Qi zathura >/dev/null 2>&1 || sudo pacman -S --noconfirm zathura
@@ -119,6 +148,9 @@ xdg-user-dirs-update
 
 # man
 pacman -Qi man >/dev/null 2>&1 || sudo pacman -S --noconfirm man
+
+# libxinerama
+pacman -Qi libxinerama >/dev/null 2>&1 || sudo pacman -S --noconfirm libxinerama
 
 # yay
 rm -rf /tmp/yay
