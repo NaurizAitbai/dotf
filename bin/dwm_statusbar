@@ -1,9 +1,7 @@
+#!/bin/sh
 
 # Statusbar loop
 while true; do
-    # Torrent
-    str_tors=$(transmission-remote -l | grep % | sed "s/.*100%.*/C/g; s/.*%.*/A/g" | sort -h | uniq -c | sed "s/A/TORS:/g; s/C/DONE:/g" | awk '{print $2, $1}' | tr '\n' ' ' | sed "s/ $//")
-
     # Datetime
     str_datetime=$(date +"%F %R")
 
@@ -14,6 +12,6 @@ while true; do
         str_volume=$(pulsemixer --get-volume | sed 's/\(.*\)[ ]\(.*\)/\1/')%
     fi
 
-    xsetroot -name "$str_tors | VOL: $str_volume | $str_datetime"
+    xsetroot -name "VOL: $str_volume | $str_datetime"
     sleep 1m
 done &
