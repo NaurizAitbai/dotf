@@ -33,7 +33,7 @@ export ANDROID_HOME=$HOME/apps/android/sdk/
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator"
 
 # Keyboard Layout
-setxkbmap -layout "us,ru,kz"
+setxkbmap -layout "us,ru" -option grp:caps_toggle
 
 # Loop dwm
 while true; do

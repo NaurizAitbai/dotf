@@ -6,42 +6,30 @@ super + s
 super + shift + s
     sh $HOME/.local/bin/region_screenshot_file
 
-
 # Change Volume
 super + {minus,equal}
-    pamixer -{d,i} 5 && sh $HOME/.local/bin/dwm_refresh_statusbar
+    pulsemixer --change-volume {-,+}5 && sh $HOME/.local/bin/dwm_refresh_statusbar
 
 # Change Volume to 50%
 super + plus
-    pamixer --set-volume 50 && sh $HOME/.local/bin/dwm_refresh_statusbar
+    pulsemixer --set-volume 50 && sh $HOME/.local/bin/dwm_refresh_statusbar
 
 # Volume Mute Toggle
 super + underscore
-    sh $HOME/.local/bin/volume_mute_toggle && sh $HOME/.local/bin/dwm_refresh_statusbar
+    pulsemixer --toggle-mute && sh $HOME/.local/bin/dwm_refresh_statusbar
 
 # Music Toggle
 super + shift + p
     cmus-remote -u
 
-
-# Change Lang (EN,RU)
-super + z
-    sh $HOME/.local/bin/change_lang_us-ru && $HOME/.local/bin/dwm_refresh_statusbar
-
-# Change Lang (EN,KZ)
-super + shift + z
-    sh $HOME/.local/bin/change_lang_us-kz && $HOME/.local/bin/dwm_refresh_statusbar
-
 # Lockscreen
 super + shift + l
-    sh $HOME/.local/bin/change_lang_us && pamixer --mute && { i3lock -n -t -i $HOME/.lock.png; pamixer --unmute; sh $HOME/.local/bin/dwm_refresh_statusbar; }
+    pulsemixer --mute && { i3lock -n -t -i $HOME/.lock.png; pulsemixer --unmute; sh $HOME/.local/bin/dwm_refresh_statusbar; }
 
-
-# Dmenu: Emoji
+# dmenu: Emoji
 super + e
     sh $HOME/.local/bin/dmenuunicode
 
-
-# Start ranger
+# Start File Manager
 super + r
     st -e ranger

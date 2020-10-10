@@ -1,7 +1,0 @@
-#!/bin/sh
-
-if [ $(pamixer --get-mute) == "true" ]; then
-    pamixer --unmute
-else
-    pamixer --mute
-fi
