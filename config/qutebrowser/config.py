@@ -59,9 +59,6 @@ c.fonts.web.family.standard = 'iosevka'
 # Automatically enter insert mode if an editable element is focused after loading the page.
 c.input.insert_mode.auto_load = True
 
-# When to use Chromium's low-end device mode.
-c.qt.low_end_device_mode = 'always'
-
 # Which Chromium process model to use.
 c.qt.process_model = 'process-per-site'
 
