@@ -152,6 +152,21 @@ pacman -Qi man >/dev/null 2>&1 || sudo pacman -S --noconfirm man
 # libxinerama
 pacman -Qi libxinerama >/dev/null 2>&1 || sudo pacman -S --noconfirm libxinerama
 
+# R
+pacman -Qi r >/dev/null 2>&1 || sudo pacman -S --noconfirm r
+echo "install.packages('rmarkdown', repo='http://cran.rstudio.com')" | sudo R --vanilla
+
+# pandoc
+pacman -Qi pandoc >/dev/null 2>&1 || sudo pacman -S --noconfirm pandoc
+
+# texlive
+pacman -Qg texlive-most >/dev/null 2>&1 || sudo pacman -S --noconfirm texlive-most
+pacman -Qg texlive-lang >/dev/null 2>&1 || sudo pacman -S --noconfirm texlive-lang
+
+# cronie
+pacman -Qi cronie >/dev/null 2>&1 || sudo pacman -S --noconfirm cronie
+sudo systemctl enable cronie --now
+
 # yay
 rm -rf /tmp/yay
 pacman -Qi yay >/dev/null 2>&1 || { git clone https://aur.archlinux.org/yay.git /tmp/yay; cd /tmp/yay && makepkg -si --noconfirm; }
@@ -170,10 +185,6 @@ yay -Qi ttf-iosevka >/dev/null 2>&1 || yay -S --noconfirm ttf-iosevka
 # applications (desktop-files)
 [ -d $HOME/.local/share/applications ] || mkdir -p $HOME/.local/share/applications
 ln -sf $(realpath applications/*) $HOME/.local/share/applications
-
-# share
-[ -d $HOME/.local/share ] || mkdir -p $HOME/.local/share
-ln -sf $(realpath share/*) $HOME/.local/share
 
 # binaries
 [ -d $HOME/.local/bin ] || mkdir -p $HOME/.local/bin

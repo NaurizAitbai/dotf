@@ -26,10 +26,6 @@ super + shift + p
 super + shift + l
     pulsemixer --mute && { i3lock -n -t -i $HOME/.lock.png; pulsemixer --unmute; sh $HOME/.local/bin/dwm_refresh_statusbar; }
 
-# dmenu: Emoji
-super + e
-    sh $HOME/.local/bin/dmenuunicode
-
 # Start File Manager
 super + r
     st -e ranger

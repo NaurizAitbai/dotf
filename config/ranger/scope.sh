@@ -94,6 +94,10 @@ handle_image() {
         #     convert "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
         #     exit 1;;
 
+        image/vnd.djvu)
+            echo djvu not supported
+            exit 0;;
+
         # Image
         image/*)
             local orientation
