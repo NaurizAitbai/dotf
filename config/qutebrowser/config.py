@@ -25,8 +25,14 @@ c.content.fullscreen.window = True
 # Allow websites to request geolocations.
 c.content.geolocation = False
 
-# Allow websites to record audio/video.
-c.content.media_capture = False
+# Allow websites to record audio.
+c.content.media.audio_capture = False
+
+# Allow websites to record audio and video
+c.content.media.audio_video_capture = False
+
+# Allow websites to record video
+c.content.media.video_capture = False
 
 # Allow websites to lock your mouse pointer.
 c.content.mouse_lock = False
