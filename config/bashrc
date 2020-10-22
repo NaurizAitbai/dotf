@@ -4,6 +4,9 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
+# alias ranger
+alias ranger='ranger --cachedir=$HOME/.tmp/ranger'
+
 # enable vi style editing in bash
 set -o vi
 

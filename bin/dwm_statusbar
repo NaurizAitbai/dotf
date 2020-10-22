@@ -12,6 +12,9 @@ while true; do
         str_volume=$(pulsemixer --get-volume | sed 's/\(.*\)[ ]\(.*\)/\1/')%
     fi
 
-    xsetroot -name "VOL: $str_volume | $str_datetime"
+    # Count directories and files in $HOME/.tmp/
+    str_tmp_count=$(ls -1 $HOME/.tmp | wc -l)
+
+    xsetroot -name "TMP: $str_tmp_count | VOL: $str_volume | $str_datetime"
     sleep 1m
 done &
