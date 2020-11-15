@@ -22,6 +22,12 @@ super + underscore
 super + shift + p
     cmus-remote -u
 
+# Temp Dvorak changer
+super + a
+    setxkbmap -layout "us,ru"
+super + shift + a
+    setxkbmap -layout "us,ru" -variant "dvp,"
+
 # Lockscreen
 super + shift + l
     pulsemixer --mute && { i3lock -n -t -i $HOME/.lock.png; pulsemixer --unmute; sh $HOME/.local/bin/dwm_refresh_statusbar; }
