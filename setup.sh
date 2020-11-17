@@ -167,6 +167,11 @@ pacman -Qg texlive-lang >/dev/null 2>&1 || sudo pacman -S --noconfirm texlive-la
 pacman -Qi cronie >/dev/null 2>&1 || sudo pacman -S --noconfirm cronie
 sudo systemctl enable cronie --now
 
+# neomutt
+pacman -Qi neomutt >/dev/null 2>&1 || sudo pacman -S --noconfirm neomutt
+[ -d $HOME/.config/mutt ] || mkdir -p $HOME/.config/mutt
+ln -sf $(realpath config/mutt/muttrc) $HOME/.config/mutt/
+
 # yay
 rm -rf /tmp/yay
 pacman -Qi yay >/dev/null 2>&1 || { git clone https://aur.archlinux.org/yay.git /tmp/yay; cd /tmp/yay && makepkg -si --noconfirm; }

@@ -22,11 +22,15 @@ super + underscore
 super + shift + p
     cmus-remote -u
 
-# Temp Dvorak changer
+# Keyboard Layout Changes
 super + a
-    setxkbmap -layout "us,ru"
+    setxkbmap -layout "us,ru" -option grp:caps_toggle
 super + shift + a
-    setxkbmap -layout "us,ru" -variant "dvp,"
+    setxkbmap -layout "us,kz" -option grp:caps_toggle
+
+# Temp Dvorak Changes
+super + z
+    setxkbmap -layout "us,ru" -variant "dvp," -option grp:caps_toggle
 
 # Lockscreen
 super + shift + l
@@ -34,4 +38,4 @@ super + shift + l
 
 # Start File Manager
 super + r
-    st -e ranger
+    st -e ranger --cachedir=$HOME/.tmp/ranger
