@@ -87,6 +87,9 @@ pacman -Qi poppler >/dev/null 2>&1 || sudo pacman -S --noconfirm poppler
 # ffmpegthumbnailer
 pacman -Qi ffmpegthumbnailer >/dev/null 2>&1 || sudo pacman -S --noconfirm ffmpegthumbnailer
 
+# ueberzug
+pacman -Qi ueberzug >/dev/null 2>&1 || sudo pacman -S --noconfirm ueberzug
+
 # ranger
 pacman -Qi ranger >/dev/null 2>&1 || sudo pacman -S --noconfirm ranger
 [ -d $HOME/.config/ranger ] || mkdir -p $HOME/.config/ranger
