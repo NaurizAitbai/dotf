@@ -8,15 +8,15 @@ super + shift + s
 
 # Change Volume
 super + {minus,equal}
-    pulsemixer --change-volume {-,+}5 && sh $HOME/.local/bin/dwm_refresh_statusbar
+    pulsemixer --change-volume {-,+}5 && pkill -RTMIN+10 dwmblocks
 
 # Change Volume to 50%
 super + plus
-    pulsemixer --set-volume 50 && sh $HOME/.local/bin/dwm_refresh_statusbar
+    pulsemixer --set-volume 50 && pkill -RTMIN+10 dwmblocks
 
 # Volume Mute Toggle
 super + underscore
-    pulsemixer --toggle-mute && sh $HOME/.local/bin/dwm_refresh_statusbar
+    pulsemixer --toggle-mute && pkill -RTMIN+10 dwmblocks
 
 # Music Toggle
 super + shift + p
@@ -28,14 +28,10 @@ super + a
 super + shift + a
     setxkbmap -layout "us,kz" -option grp:caps_toggle
 
-# Temp Dvorak Changes
-super + z
-    setxkbmap -layout "us,ru" -variant "dvp," -option grp:caps_toggle
-
 # Lockscreen
 super + shift + l
-    pulsemixer --mute && { i3lock -n -t -i $HOME/.lock.png; pulsemixer --unmute; sh $HOME/.local/bin/dwm_refresh_statusbar; }
+    pulsemixer --mute && { i3lock -n -t -i $HOME/.lock.png; pulsemixer --unmute }
 
 # Start File Manager
 super + r
-    st -e ranger --cachedir=$HOME/.tmp/ranger
+    st -e ranger

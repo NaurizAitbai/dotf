@@ -4,9 +4,6 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# alias ranger
-alias ranger='ranger --cachedir=$HOME/.tmp/ranger'
-
 # enable vi style editing in bash
 set -o vi
 
@@ -16,3 +13,5 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 
 export EDITOR=nvim
+export NNN_FIFO=/tmp/nnn.fifo
+export NNN_PLUG='w:preview-tabbed'

@@ -156,8 +156,8 @@ pacman -Qi man >/dev/null 2>&1 || sudo pacman -S --noconfirm man
 pacman -Qi libxinerama >/dev/null 2>&1 || sudo pacman -S --noconfirm libxinerama
 
 # R
-pacman -Qi r >/dev/null 2>&1 || sudo pacman -S --noconfirm r
-echo "install.packages('rmarkdown', repo='http://cran.rstudio.com')" | sudo R --vanilla
+# pacman -Qi r >/dev/null 2>&1 || sudo pacman -S --noconfirm r
+# echo "install.packages('rmarkdown', repo='http://cran.rstudio.com')" | sudo R --vanilla
 
 # pandoc
 pacman -Qi pandoc >/dev/null 2>&1 || sudo pacman -S --noconfirm pandoc

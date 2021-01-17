@@ -3,12 +3,11 @@ if [ $(hostname) = "naukan-home" ]; then
     xrandr --output DVI-D-0 --auto --output DP-0 --auto --left-of DVI-D-0
 fi
 
-
 # Set $PATH variable
 export PATH="$PATH:$HOME/.local/bin"
 
-# Start statusbar items
-$HOME/.local/bin/dwm_statusbar
+# Start dwmblocks
+dwmblocks &
 
 # Start global shortcuts
 sxhkd &
@@ -16,8 +15,8 @@ sxhkd &
 # Start notification system
 dunst &
 
-# Start nm-applet
-nm-applet &
+# Check updates
+check_updates &
 
 # Start transmission
 transmission-daemon &

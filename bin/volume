@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ $(pulsemixer --get-mute) == "1" ]; then
+    volume=MUTED
+else
+    volume=$(pulsemixer --get-volume | sed 's/\(.*\)[ ]\(.*\)/\1/')%
+fi
+
+echo $volume
