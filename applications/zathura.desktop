@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=zathura
+Terminal=false
+Exec=zathura %u

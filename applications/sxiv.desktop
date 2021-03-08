@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=sxiv
+Terminal=false
+Exec=sxiv %u

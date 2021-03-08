@@ -1,9 +1,0 @@
-#!/bin/sh
-
-while ! pidof cmus >> /dev/null ;
-do
-st -e cmus &
-sleep 0.1
-done
-
-cmus-remote -f "$1"

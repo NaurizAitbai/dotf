@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=lf
+Terminal=false
+Exec=st -e lfu %u
