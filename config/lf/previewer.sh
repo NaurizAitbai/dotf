@@ -1,4 +1,5 @@
 #!/bin/sh
+
 draw() {
   ~/.config/lf/draw_img.sh "$@"
   exit 1
@@ -16,10 +17,32 @@ cache() {
 }
 
 file="$1"
+width="$2"
+height="$3"
 shift
+
+default_x="1920"
+default_y="1080"
 
 if [ -n "$FIFO_UEBERZUG" ]; then
   case "$(file -Lb --mime-type -- "$file")" in
+    image/vnd.djvu)
+      cache="$(hash "$file")"
+      cache "${cache}.jpg" "$@"
+      ddjvu -format=pdf -quality=90 -page=1 -size="${default_x}x${default_y}" - "$cache" < "$file"
+      pdftoppm -f 1 -l 1 -scale-to-x "$default_x" -scale-to-y -1 -singlefile -jpeg -- "$cache" "$cache"
+      draw "${cache}.jpg" "$@"
+      ;;
+    application/pdf)
+      cache="$(hash "$file")"
+      cache "${cache}.jpg" "$@"
+      pdftoppm -f 1 -l 1 -scale-to-x "$default_x" -scale-to-y -1 -singlefile -jpeg -- "$file" "$cache"
+      draw "${cache}.jpg" "$@"
+      ;;
+    text/*)
+      cat -- "$file"
+      exit 0
+      ;;
     image/*)
       orientation="$(identify -format '%[EXIF:Orientation]\n' -- "$file")"
       if [ -n "$orientation" ] && [ "$orientation" != 1 ]; then
@@ -27,10 +50,8 @@ if [ -n "$FIFO_UEBERZUG" ]; then
         cache "$cache" "$@"
         convert -- "$file" -auto-orient "$cache"
         draw "$cache" "$@"
-        echo "TEST"
       else
         draw "$file" "$@"
-        echo "TEST2"
       fi
       ;;
     video/*)
@@ -42,5 +63,5 @@ if [ -n "$FIFO_UEBERZUG" ]; then
   esac
 fi
 
-file -Lb -- "$1" | fold -s -w "$width"
-exit 2
+file -Lb -- "$file" | fold -s -w "$width"
+exit 0
