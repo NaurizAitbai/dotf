@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# nnn
+pacman -Qi nnn >/dev/null 2>&1 || sudo pacman -S --noconfirm nnn
+
 # xclip
 pacman -Qi xclip >/dev/null 2>&1 || sudo pacman -S --noconfirm xclip
 
@@ -42,16 +45,13 @@ pacman -Qi poppler >/dev/null 2>&1 || sudo pacman -S --noconfirm poppler
 # ffmpegthumbnailer
 pacman -Qi ffmpegthumbnailer >/dev/null 2>&1 || sudo pacman -S --noconfirm ffmpegthumbnailer
 
-# ueberzug
-pacman -Qi ueberzug >/dev/null 2>&1 || sudo pacman -S --noconfirm ueberzug
-
 # qutebrowser
 pacman -Qi qutebrowser >/dev/null 2>&1 || sudo pacman -S --noconfirm qutebrowser
 [ -d $HOME/.config/qutebrowser ] || mkdir -p $HOME/.config/qutebrowser
 ln -sf $(realpath config/qutebrowser/config.py) $HOME/.config/qutebrowser/
 
-# pdfjs
-pacman -Qi pdfjs >/dev/null 2>&1 || sudo pacman -S --noconfirm pdfjs
+# adlobkc for qutebrowser
+pacman -Qi python-adblock >/dev/null 2>&1 || sudo pacman -S --noconfirm python-adblock
 
 # sxiv
 pacman -Qi sxiv >/dev/null 2>&1 || sudo pacman -S --noconfirm sxiv
@@ -93,12 +93,6 @@ ln -sf $(realpath config/mutt/muttrc) $HOME/.config/mutt/
 
 # stig
 yay -Qi stig >/dev/null 2>&1 || yay -S --noconfirm stig
-
-# lf
-yay -Qi lf >/dev/null 2>&1 || yay -S --noconfirm lf
-ln -sf $(realpath config/lf/*) $HOME/.config/lf
-sudo cp config/lfu /usr/local/bin
-sudo chmod +x /usr/local/bin/lfu
 
 # xdg-user-dirs
 pacman -Qi xdg-user-dirs >/dev/null 2>&1 || sudo pacman -S --noconfirm xdg-user-dirs

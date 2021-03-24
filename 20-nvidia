@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# nvidia
+pacman -Qi nvidia >/dev/null 2>&1 || sudo pacman -S --noconfirm nvidia
+sudo nvidia-xconfig

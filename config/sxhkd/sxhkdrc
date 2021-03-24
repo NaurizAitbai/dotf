@@ -1,10 +1,10 @@
 # Region Screenshot Clipboard
 super + s
-    sh $HOME/.local/bin/region_screenshot_clipboard
+    sh $HOME/.local/bin/regshot_clip
 
 # Region Screenshot File
 super + shift + s
-    sh $HOME/.local/bin/region_screenshot_file
+    sh $HOME/.local/bin/regshot_file
 
 # Change Volume
 super + {minus,equal}
@@ -34,4 +34,4 @@ super + shift + l
 
 # Start File Manager
 super + r
-    st -e lfu
+    st -e nnn

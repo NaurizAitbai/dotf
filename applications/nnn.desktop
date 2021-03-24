@@ -1,4 +1,4 @@
 [Desktop Entry]
-Name=lf
+Name=nnn
 Terminal=false
-Exec=st -e lfu %u
+Exec=st -e nnn %u

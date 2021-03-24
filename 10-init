@@ -20,10 +20,6 @@ pacman -Qi xorg-xrandr >/dev/null 2>&1 || sudo pacman -S --noconfirm xorg-xrandr
 # xorg-xsetroot
 pacman -Qi xorg-xsetroot >/dev/null 2>&1 || sudo pacman -S --noconfirm xorg-xsetroot
 
-# nvidia
-pacman -Qi nvidia >/dev/null 2>&1 || sudo pacman -S --noconfirm nvidia
-sudo nvidia-xconfig
-
 # pulseaudio
 pacman -Qi pulseaudio >/dev/null 2>&1 || sudo pacman -S --noconfirm pulseaudio
 systemctl --user --now enable pulseaudio
