@@ -14,7 +14,7 @@ c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/2
 c.content.canvas_reading = False
 
 # When to send the Referer header.
-c.content.headers.referer = 'never'
+c.content.headers.referer = 'same-domain'
 
 # Use the standard JavaScript model dialog for 'alert()' and 'config()'.
 c.content.javascript.modal_dialog = True
