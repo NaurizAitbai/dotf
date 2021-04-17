@@ -65,7 +65,7 @@ c.content.media.audio_capture = False
 c.content.media.video_capture = False
 c.content.media.audio_video_capture = False
 c.content.mouse_lock = False
-c.content.notifications = False
+c.content.notifications.enabled = False
 c.content.persistent_storage = False
 c.content.register_protocol_handler = False
 
