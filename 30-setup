@@ -12,10 +12,6 @@ pacman -Qi dmenu >/dev/null 2>&1 || sudo pacman -S --noconfirm dmenu
 # pulsemixer
 pacman -Qi pulsemixer >/dev/null 2>&1 || sudo pacman -S --noconfirm pulsemixer
 
-# syncthing
-pacman -Qi syncthing >/dev/null 2>&1 || sudo pacman -S --noconfirm syncthing
-systemctl --user --now enable syncthing
-
 # i3lock
 pacman -Qi i3lock >/dev/null 2>&1 || sudo pacman -S --noconfirm i3lock
 
