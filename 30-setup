@@ -82,11 +82,6 @@ pacman -Qi pandoc >/dev/null 2>&1 || sudo pacman -S --noconfirm pandoc
 pacman -Qg texlive-most >/dev/null 2>&1 || sudo pacman -S --noconfirm texlive-most
 pacman -Qg texlive-lang >/dev/null 2>&1 || sudo pacman -S --noconfirm texlive-lang
 
-# neomutt
-pacman -Qi neomutt >/dev/null 2>&1 || sudo pacman -S --noconfirm neomutt
-[ -d $HOME/.config/mutt ] || mkdir -p $HOME/.config/mutt
-ln -sf $(realpath config/mutt/muttrc) $HOME/.config/mutt/
-
 # stig
 yay -Qi stig >/dev/null 2>&1 || yay -S --noconfirm stig
 
