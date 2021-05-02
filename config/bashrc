@@ -10,7 +10,6 @@ set -o vi
 export EDITOR=nvim
 
 export PASSWORD_STORE_DIR=~/docs/pass
-alias workpass="PASSWORD_STORE_DIR=~/docs/workpass pass"
 
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='w:preview-tabbed;c:cmount;u:cumount;l:wallpaper;L:lock'
