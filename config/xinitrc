@@ -1,6 +1,6 @@
 # Home Computer
 if [ $(hostname) = "naukan-home" ]; then
-    xrandr --output DVI-D-0 --auto --output DP-0 --auto --left-of DVI-D-0
+    xrandr --output DVI-D-0 --auto --output DP-0 --auto --right-of DVI-D-0
 fi
 
 # Set $PATH variable

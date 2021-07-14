@@ -41,14 +41,6 @@ pacman -Qi poppler >/dev/null 2>&1 || sudo pacman -S --noconfirm poppler
 # ffmpegthumbnailer
 pacman -Qi ffmpegthumbnailer >/dev/null 2>&1 || sudo pacman -S --noconfirm ffmpegthumbnailer
 
-# qutebrowser
-pacman -Qi qutebrowser >/dev/null 2>&1 || sudo pacman -S --noconfirm qutebrowser
-[ -d $HOME/.config/qutebrowser ] || mkdir -p $HOME/.config/qutebrowser
-ln -sf $(realpath config/qutebrowser/config.py) $HOME/.config/qutebrowser/
-
-# adlobkc for qutebrowser
-pacman -Qi python-adblock >/dev/null 2>&1 || sudo pacman -S --noconfirm python-adblock
-
 # sxiv
 pacman -Qi sxiv >/dev/null 2>&1 || sudo pacman -S --noconfirm sxiv
 
