@@ -5,3 +5,4 @@ application/x-bittorrent=torrent.desktop;
 image/png=sxiv.desktop;
 image/jpeg=sxiv.desktop;
 application/pdf=zathura.desktop;
+x-scheme-handler/org-protocol=org-protocol.desktop;
