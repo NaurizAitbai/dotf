@@ -34,4 +34,4 @@ super + shift + l
 
 # Start File Manager
 super + r
-    st -e nnn
+    st -e lf

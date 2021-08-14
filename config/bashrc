@@ -12,9 +12,6 @@ export BROWSER=qutebrowser
 
 export PASSWORD_STORE_DIR=~/docs/pass
 
-export NNN_FIFO=/tmp/nnn.fifo
-export NNN_PLUG='w:preview-tabbed;c:cmount;u:cumount;l:wallpaper;L:lock'
-
 # run 'startx' command
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	exec startx;

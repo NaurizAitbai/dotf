@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# nnn
-pacman -Qi nnn >/dev/null 2>&1 || sudo pacman -S --noconfirm nnn
-
 # xclip
 pacman -Qi xclip >/dev/null 2>&1 || sudo pacman -S --noconfirm xclip
 
