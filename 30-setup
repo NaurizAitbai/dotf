@@ -24,11 +24,6 @@ pacman -Qi mpv >/dev/null 2>&1 || sudo pacman -S --noconfirm mpv
 # youtube-dl
 pacman -Qi youtube-dl >/dev/null 2>&1 || sudo pacman -S --noconfirm youtube-dl
 
-# transmission
-pacman -Qi transmission-cli >/dev/null 2>&1 || sudo pacman -S --noconfirm transmission-cli
-[ -d $HOME/.config/transmission-daemon ] || mkdir -p $HOME/.config/transmission-daemon
-ln -sf $(realpath config/transmission-daemon/settings.json) $HOME/.config/transmission-daemon/
-
 # feh
 pacman -Qi feh >/dev/null 2>&1 || sudo pacman -S --noconfirm feh
 
@@ -61,6 +56,9 @@ pacman -Qi zathura-pdf-mupdf >/dev/null 2>&1 || sudo pacman -S --noconfirm zathu
 [ -d $HOME/.config/zathura ] || mkdir -p $HOME/.config/zathura
 ln -sf $(realpath config/zathura/zathurarc) $HOME/.config/zathura/
 
+# aria2
+pacman -Qi aria2 >/dev/null 2>&1 || sudo pacman -S --noconfirm aria2
+
 # man
 pacman -Qi man >/dev/null 2>&1 || sudo pacman -S --noconfirm man
 
@@ -70,9 +68,6 @@ pacman -Qi pandoc >/dev/null 2>&1 || sudo pacman -S --noconfirm pandoc
 # texlive
 pacman -Qg texlive-most >/dev/null 2>&1 || sudo pacman -S --noconfirm texlive-most
 pacman -Qg texlive-lang >/dev/null 2>&1 || sudo pacman -S --noconfirm texlive-lang
-
-# stig
-yay -Qi stig >/dev/null 2>&1 || yay -S --noconfirm stig
 
 # xdg-user-dirs
 pacman -Qi xdg-user-dirs >/dev/null 2>&1 || sudo pacman -S --noconfirm xdg-user-dirs

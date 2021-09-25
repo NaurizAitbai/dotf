@@ -15,14 +15,11 @@ sxhkd &
 # Start notification system
 dunst &
 
-# Start transmission
-transmission-daemon &
-
 # Start Emacs as a daemon
 emacs --daemon &
 
 # Show background wallpaper
-feh --bg-fill $HOME/.wallpaper.png
+feh --bg-fill $HOME/.wallpaper
 
 # Fix Java Blank Screen
 export _JAVA_AWT_WM_NONREPARENTING=1

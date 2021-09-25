@@ -1,0 +1,4 @@
+#!/bin/sh
+
+notify-send "aria2" "Downloading torrent."
+st -e aria2c "$@" || exit 0

@@ -30,7 +30,7 @@ super + shift + a
 
 # Lockscreen
 super + shift + l
-    pulsemixer --mute && { i3lock -n -t -i $HOME/.lock.png; pulsemixer --unmute }
+    pulsemixer --mute && { i3lock -n -t -i $HOME/.lock; pulsemixer --unmute }
 
 # Start File Manager
 super + r
