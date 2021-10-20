@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+filename=`basename "$1"`
+sudo cryptsetup -v luksOpen "$1" "$filename"
+sudo mkdir -p /mnt/"$filename"
+sudo mount /dev/mapper/"$filename" /mnt/"$filename"
+sudo chown $(whoami) /mnt/"$filename"

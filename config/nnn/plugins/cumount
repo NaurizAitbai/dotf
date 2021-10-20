@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+filename=`basename "$1"`
+sudo umount /mnt/"$filename"
+sudo cryptsetup -v luksClose "$filename"

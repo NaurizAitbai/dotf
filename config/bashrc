@@ -8,10 +8,14 @@ PS1='[\u@\h \W]\$ '
 set -o vi
 
 # disable history
-set +o history
+#set +o history
 
 export EDITOR=nvim
 export BROWSER=qutebrowser
+
+# nnn
+export NNN_FIFO=/tmp/nnn.fifo
+export NNN_PLUG='w:preview-tabbed;c:cmount;u:cumount;l:wallpaper;L:lock'
 
 export PASSWORD_STORE_DIR=~/annex/pass
 

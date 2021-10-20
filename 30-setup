@@ -3,6 +3,11 @@
 # xclip
 pacman -Qi xclip >/dev/null 2>&1 || sudo pacman -S --noconfirm xclip
 
+# nnn - the unorthodox terminal file manager
+pacman -Qi nnn >/dev/null 2>&1 || sudo pacman -S --noconfirm nnn
+[ -d $HOME/.config/nnn/plugins ] || mkdir -p $HOME/.config/nnn/plugins
+ln -sf $(realpath config/nnn/plugins/*) $HOME/.config/nnn/plugins
+
 # dmenu
 pacman -Qi dmenu >/dev/null 2>&1 || sudo pacman -S --noconfirm dmenu
 
