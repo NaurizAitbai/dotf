@@ -7,7 +7,7 @@ PS1='[\u@\h \W]\$ '
 # enable vi style editing in bash
 set -o vi
 
-# asliases
+# aliases
 alias gitall="git remote | awk -F, '\$1 != \"upstream\"' | xargs -L1 -I R git push R --all"
 
 # disable history

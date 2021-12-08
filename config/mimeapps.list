@@ -1,5 +1,5 @@
 [Default Applications]
-inode/directory=lf.desktop;
+inode/directory=nnn.desktop;
 x-scheme-handler/magnet=torrent.desktop;
 application/x-bittorrent=torrent.desktop;
 image/png=sxiv.desktop;
