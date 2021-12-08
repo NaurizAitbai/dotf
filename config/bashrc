@@ -8,7 +8,7 @@ PS1='[\u@\h \W]\$ '
 set -o vi
 
 # asliases
-alias gitall='git remote | xargs -L1 -I R git push R --all'
+alias gitall="git remote | awk -F, \'\$1 != \"upstream\"\' | xargs -L1 -I R git push R --all"
 
 # disable history
 #set +o history
