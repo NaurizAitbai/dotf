@@ -32,6 +32,10 @@ super + shift + a
 super + shift + l
     pulsemixer --mute && { i3lock -n -t -i $HOME/.lock; pulsemixer --unmute }
 
-# Start File Manager
+# Start File Manager (lf)
 super + r
     st -e lf
+
+# Start File Manager (nnn)
+super + shift + r
+    st -e nnn

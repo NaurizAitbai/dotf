@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+selection=${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection}
+
+if [ -s "$selection" ]; then
+    arr=($(tr '\0' '\n' < "$selection"))
+    git annex add ${arr[@]}
+    count=${#arr[@]}
+
+    if [ $count -eq 1 ]; then
+        git commit -m "$(basename ${arr[0]})"
+    else
+        git commit -m "added several files"
+    fi
+else
+    git annex add $1
+    git commit -m "$(basename ${1})"
+fi
