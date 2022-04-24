@@ -13,12 +13,10 @@ alias gitall="git remote | awk -F, '\$1 != \"upstream\"' | xargs -L1 -I R git pu
 # disable history
 #set +o history
 
+source $HOME/.bashrc_nnn
+
 export EDITOR=nvim
 export BROWSER=qutebrowser
-
-# nnn
-export NNN_FIFO=/tmp/nnn.fifo
-export NNN_PLUG='w:preview-tabbed;c:cmount;u:cumount;l:wallpaper;L:lock;a:annex;t:tag;T:untag;p:cmusq;e:suedit;o:fzopen;f:fzcd;s:fztags'
 
 export PASSWORD_STORE_DIR=~/annex/pass
 

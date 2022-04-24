@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-convert "$1" $HOME/.wallpaper && feh --bg-fill $HOME/.wallpaper
