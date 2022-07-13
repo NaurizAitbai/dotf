@@ -39,3 +39,7 @@ super + r
 # Start File Manager (nnn)
 super + shift + r
     st -e nnn
+
+# Fix dual monitor screens
+super + shift + d
+    xrandr --output DP-0 --primary --auto --panning 1920x1080+1920+0 --output HDMI-0 --mode 1920x1080 --panning 1920x1080+0+0
