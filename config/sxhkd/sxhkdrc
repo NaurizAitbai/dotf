@@ -38,7 +38,7 @@ super + r
 
 # Start File Manager (nnn)
 super + shift + r
-    st -e nnn
+    st -e nnn -A
 
 # Fix dual monitor screens
 super + shift + d
