@@ -8,7 +8,7 @@ PS1='[\u@\h \W]\$ '
 set -o vi
 
 # aliases
-alias gitall="git remote | awk -F, '\$1 != \"upstream\"' | xargs -L1 -I R git push R --all"
+alias gitall="git remote | awk -F, '\$1 != \"upstream\"' | xargs -I R git push R --all"
 
 # disable history
 #set +o history
@@ -25,6 +25,3 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	exec startx;
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
