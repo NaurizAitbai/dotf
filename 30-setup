@@ -81,7 +81,7 @@ ln -sf $(realpath config/user-dirs.locale) $HOME/.config/user-dirs.locale
 [ -d $HOME/vids ] || mkdir -p $HOME/vids
 [ -d $HOME/cons ] || mkdir -p $HOME/cons
 [ -d $HOME/repos ] || mkdir -p $HOME/repos
-[ -d $HOME/qemu ] || mkdir -p $HOME/qemu
+[ -d $HOME/vms ] || mkdir -p $HOME/vms
 xdg-user-dirs-update
 
 # noto-fonts
@@ -89,6 +89,15 @@ pacman -Qi noto-fonts >/dev/null 2>&1 || sudo pacman -S --noconfirm noto-fonts
 pacman -Qi noto-fonts-cjk >/dev/null 2>&1 || sudo pacman -S --noconfirm noto-fonts-cjk
 pacman -Qi noto-fonts-emoji >/dev/null 2>&1 || sudo pacman -S --noconfirm noto-fonts-emoji
 pacman -Qi noto-fonts-extra >/dev/null 2>&1 || sudo pacman -S --noconfirm noto-fonts-extra
+
+# termdown
+pacman -Qi termdown >/dev/null 2>&1 || sudo pacman -S --noconfirm termdown
+
+# annex
+pacman -Qi git-annex >/dev/null 2>&1 || sudo pacman -S --noconfirm git-annex
+
+# remote-gcrypt
+yay -Qi git-remote-gcrypt >/dev/null 2>&1 || yay -S --noconfirm git-remote-gcrypt
 
 # ttf-iosevka
 yay -Qi ttf-iosevka >/dev/null 2>&1 || yay -S --noconfirm ttf-iosevka

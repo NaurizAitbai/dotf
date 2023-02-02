@@ -1,0 +1,3 @@
+#!/bin/sh
+
+termdown "$@" && mpv ~/mus/alarm.mp3

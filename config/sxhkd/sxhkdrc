@@ -19,7 +19,7 @@ super + underscore
     pulsemixer --toggle-mute && pkill -RTMIN+10 dwmblocks
 
 # Music Toggle
-super + shift + p
+super + shift + o
     cmus-remote -u
 
 # Keyboard Layout Changes
