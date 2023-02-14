@@ -1,5 +1,4 @@
-# xrandr --output HDMI-0 --auto --output DP-0 --auto --right-of HDMI-0
-xrandr --output DVI-D-0 --primary --auto --panning 1920x1080+1920+0 --output HDMI-0 --mode 1920x1080 --panning 1920x1080+0+0
+FILE=~/.xinitrc_local
 
 # Set $PATH variable
 export PATH="$PATH:$HOME/.local/bin"
@@ -21,6 +20,7 @@ feh --bg-fill $HOME/.wallpaper
 
 # Fix Java Blank Screen
 export _JAVA_AWT_WM_NONREPARENTING=1
+export AWT_TOOLKIT=MToolkit
 
 # Keyboard Layout
 setxkbmap -layout "us,ru" -option grp:caps_toggle
@@ -30,6 +30,12 @@ nm-applet &
 
 # Connect to bridge
 nmcli conn up enp2s0
+
+# .xinitrc_local
+# xrandr --output DVI-D-0 --primary --auto --panning 1920x1080+1920+0 --output HDMI-0 --mode 1920x1080 --panning 1920x1080+0+0
+if [ -f "$FILE" ]; then
+    source $FILE
+fi
 
 # Loop dwm
 while true; do
