@@ -32,18 +32,34 @@ super + shift + a
 super + shift + l
     pulsemixer --mute && { i3lock -n -t -i $HOME/.lock; pulsemixer --unmute }
 
-# Start File Manager (lf)
-super + r
-    st -e lf
-
 # Start File Manager (nnn)
-super + shift + r
+super + r
     st -e nnn -A
+
+# Fix keyboard locale
+super + shift + r
+    setxkbmap -layout "us,ru" -option grp:caps_toggle && notify-send "Fixed" "Fix Keyboard Locale"
 
 # Fix dual monitor screens
 super + shift + d
-    xrandr --output DP-0 --primary --auto --panning 1920x1080+1920+0 --output HDMI-0 --mode 1920x1080 --panning 1920x1080+0+0
+    xrandr --output DP-0 --primary --auto --panning 1920x1080+1920+0 --output HDMI-0 --mode 1920x1080 --panning 1920x1080+0+0 && notify-send "Fixed" "Fix Dual Monitor Screens"
 
 # Pass Menu
 super + u
     pass_menu
+
+# Core Menu
+super + e
+    core_dmenu
+
+# Qualixdev Menu
+super + q
+    qualixdev_dmenu
+
+# Yessenov Menu
+super + y
+    yessenov_dmenu
+
+# Record
+super + w
+    dmenurecord

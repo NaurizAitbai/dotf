@@ -16,6 +16,7 @@ alias gitall="git remote | awk -F, '\$1 != \"upstream\"' | xargs -I R git push R
 #set +o history
 
 source $HOME/.bashrc_nnn
+source $HOME/.bashrc_slb
 
 export EDITOR=nvim
 export BROWSER=qutebrowser
@@ -32,3 +33,4 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	exec startx;
 fi
 
+alias active_todos="grep --exclude=\"daily_goals.org\" -rnwl '.' -e 'TODO\|WORKING' | sort"
