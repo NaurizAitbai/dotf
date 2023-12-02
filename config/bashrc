@@ -34,3 +34,8 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 
 alias active_todos="grep --exclude=\"daily_goals.org\" -rnwl '.' -e 'TODO\|WORKING' | sort"
+
+export ANDROID_HOME=$HOME/android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+source /usr/share/nvm/init-nvm.sh
