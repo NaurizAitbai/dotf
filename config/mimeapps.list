@@ -7,3 +7,4 @@ image/jpeg=sxiv.desktop;
 application/pdf=zathura.desktop;
 x-scheme-handler/org-protocol=org-protocol.desktop;
 x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
+x-scheme-handler/postman=Postman.desktop
