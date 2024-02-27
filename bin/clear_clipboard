@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Очистка основного буфера обмена
+xclip -selection clipboard -in /dev/null
+
+# Очистка буфера обмена мыши (primary buffer)
+xclip -selection primary -in /dev/null
+
+# Отправка уведомления
+notify-send 'Очистка буфера обмена' 'Буфер обмена и мышиный буфер успешно очищены.'
