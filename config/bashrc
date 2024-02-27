@@ -1,41 +1,57 @@
-FILE=~/.bashrc_local
-
-# If not running interactively, don't do anything
+# Если сессия не интерактивная, не выполнять никаких команд
 [[ $- != *i* ]] && return
 
+# Настройка алиаса для команды ls с автоматическим выбором цвета
 alias ls='ls --color=auto'
+# Настройка приглашения командной строки
 PS1='[\u@\h \W]\$ '
 
-# enable vi style editing in bash
+# Включение режима редактирования в стиле vi в bash
 set -o vi
 
-# aliases
+# Алиса
+# Алис для пуша во время репозитории, кроме upstream
 alias gitall="git remote | awk -F, '\$1 != \"upstream\"' | xargs -I R git push R --all"
 
-# disable history
+# Отключение истории команд
 #set +o history
 
-source $HOME/.bashrc_nnn
-source $HOME/.bashrc_slb
+# Подключение $HOME/.bashrc_nnn, если файл существует
+if [ -f $HOME/.bashrc_nnn ]; then
+    source $HOME/.bashrc_nnn
+fi
 
+# Подключение $HOME/.bashrc_slb, если файл существует
+if [ -f $HOME/.bashrc_slb ]; then
+    source $HOME/.bashrc_slb
+fi
+
+# Экспорт переменных окружения для редактора и браузера
 export EDITOR=nvim
 export BROWSER=qutebrowser
 
+# Установка директории для хранения паролей
 export PASSWORD_STORE_DIR=~/docs/pass
 
-# .bashrc_local
-if [ -f "$FILE" ]; then
-    source "$FILE"
+# Подключение .bashrc_local, если файл существует
+if [ -f ~/.bashrc_local ]; then
+    source ~/.bashrc_local
 fi
 
-# run 'startx' command
+# Автоматический запуск X сервера на первом терминале, если он ещё не запущен
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	exec startx;
 fi
 
+# Алиас для поиска задач TODO и WORKING в файлах, кроме daily_goals.org
 alias active_todos="grep --exclude=\"daily_goals.org\" -rnwl '.' -e 'TODO\|WORKING' | sort"
 
+# Подключение init-nvm.sh для NVM, если файл существует
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+    source /usr/share/nvm/init-nvm.sh
+fi
+
+# Установка переменных окружения для Android SDK
 export ANDROID_HOME=$HOME/android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-source /usr/share/nvm/init-nvm.sh

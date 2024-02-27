@@ -59,3 +59,7 @@ super + y
 # Record
 super + w
     dmenurecord
+
+# Очистка буфера обмена
+super + shift + x
+    clear_clipboard
