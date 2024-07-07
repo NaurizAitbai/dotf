@@ -9,8 +9,8 @@ PS1='[\u@\h \W]\$ '
 # Включение режима редактирования в стиле vi в bash
 set -o vi
 
-# Алиса
-# Алис для пуша во время репозитории, кроме upstream
+# Алиас
+# Алиас для пуша во время репозитории, кроме upstream
 alias gitall="git remote | awk -F, '\$1 != \"upstream\"' | xargs -I R git push R --all"
 
 # Отключение истории команд
@@ -25,6 +25,8 @@ fi
 if [ -f $HOME/.bashrc_slb ]; then
     source $HOME/.bashrc_slb
 fi
+
+export HISTIGNORE="yt-dlp*"
 
 # Экспорт переменных окружения для редактора и браузера
 export EDITOR=nvim
@@ -45,6 +47,12 @@ fi
 
 # Алиас для поиска задач TODO и WORKING в файлах, кроме daily_goals.org
 alias active_todos="grep --exclude=\"daily_goals.org\" -rnwl '.' -e 'TODO\|WORKING' | sort"
+
+alias all_active_todos="grep -H -E '\*\* (TODO|WORKING) Daily Goals' *.org | grep -v 'daily_goals.org' | awk -F':' '{print \$1\": \"\$2}' | less"
+alias only_working_todos="grep -H -E '\*\* WORKING Daily Goals' *.org | grep -v 'daily_goals.org' | awk -F':' '{print \$1\": \"\$2}' | less"
+
+alias all_active_project_todos="grep -H -E '\*\* (TODO|WORKING) Project Goals' *.org | grep -v 'project_goals.org' | awk -F':' '{print \$1\": \"\$2}' | less"
+alias only_working_project_todos="grep -H -E '\*\* WORKING Project Goals' *.org | grep -v 'project_goals.org' | awk -F':' '{print \$1\": \"\$2}' | less"
 
 # Подключение init-nvm.sh для NVM, если файл существует
 if [ -f /usr/share/nvm/init-nvm.sh ]; then
