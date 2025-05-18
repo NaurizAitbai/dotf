@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ -d $HOME/.local/bin ] || mkdir -p $HOME/.local/bin
+ln -sf $(realpath bin/*) $HOME/.local/bin
+chmod +x bin/*

@@ -1,0 +1,8 @@
+" Настройки цветов для vimdiff
+highlight DiffAdd     ctermfg=White ctermbg=DarkGreen guifg=White guibg=DarkGreen
+highlight DiffChange  ctermfg=White ctermbg=DarkBlue  guifg=White guibg=DarkBlue
+highlight DiffDelete  ctermfg=White ctermbg=DarkRed   guifg=White guibg=DarkRed
+highlight DiffText    ctermfg=Black ctermbg=Yellow    guifg=Black guibg=Yellow
+
+" Включить 256-цветную поддержку для терминала
+set t_Co=256

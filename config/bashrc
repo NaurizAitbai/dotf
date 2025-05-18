@@ -30,7 +30,7 @@ export HISTIGNORE="yt-dlp*"
 
 # Экспорт переменных окружения для редактора и браузера
 export EDITOR=nvim
-export BROWSER=qutebrowser
+export BROWSER=firefox
 
 # Установка директории для хранения паролей
 export PASSWORD_STORE_DIR=~/docs/pass
@@ -59,7 +59,5 @@ if [ -f /usr/share/nvm/init-nvm.sh ]; then
     source /usr/share/nvm/init-nvm.sh
 fi
 
-# Установка переменных окружения для Android SDK
-export ANDROID_HOME=$HOME/android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+alias ledger-finance='ledger balance -f ~/docs/ledger/finance.ledger'
+alias ledger-finance-edit='$EDITOR ~/docs/ledger/finance.ledger'

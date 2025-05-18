@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# applications (desktop-files)
+[ -d $HOME/.local/share/applications ] || mkdir -p $HOME/.local/share/applications
+ln -sf $(realpath applications/*) $HOME/.local/share/applications
+
+# mime packages
+[ -d $HOME/.local/share/mime/packages ] || mkdir -p $HOME/.local/share/mime/packages
+ln -sf $(realpath packages/*) $HOME/.local/share/mime/packages
+
+# link inside .config
+ln -sf $(realpath config/mimeapps.list) $HOME/.config/mimeapps.list
+
+update-mime-database $HOME/.local/share/mime

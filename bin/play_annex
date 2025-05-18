@@ -1,0 +1,21 @@
+#!/bin/bash
+
+read -p "Введите теги: " input
+
+args=($input)
+
+cmd="git annex find ."
+
+for arg in "${args[@]}"; do
+    if [[ "$arg" == *"="* ]]; then
+        key="${arg%%=*}"
+        val="${arg#*=}"
+        cmd+=" --metadata $key=$val"
+    else
+        cmd+=" --metadata tag=$arg"
+    fi
+done
+
+cmd+=" | mpv --playlist=-"
+
+eval "$cmd"

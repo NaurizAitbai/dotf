@@ -13,10 +13,10 @@ sxhkd &
 dunst &
 
 # Start Emacs as a daemon
-emacs --daemon &
+pgrep -x emacs > /dev/null ||  emacs --daemon &
 
 # Show background wallpaper
-feh --bg-fill $HOME/.wallpaper
+feh --bg-fill "$HOME/.wallpaper" &
 
 # Fix Java Blank Screen
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -29,7 +29,7 @@ setxkbmap -layout "us,ru" -option grp:caps_toggle
 nm-applet &
 
 # Connect to bridge
-nmcli conn up enp2s0
+nmcli conn up br0
 
 # .xinitrc_local
 # xrandr --output DVI-D-0 --primary --auto --panning 1920x1080+1920+0 --output HDMI-0 --mode 1920x1080 --panning 1920x1080+0+0

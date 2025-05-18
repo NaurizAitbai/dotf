@@ -52,10 +52,6 @@ super + u
 super + e
     core_dmenu
 
-# Yessenov Menu
-super + y
-    yessenov_dmenu
-
 # Record
 super + w
     dmenurecord
